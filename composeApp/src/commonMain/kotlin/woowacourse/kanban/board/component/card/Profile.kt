@@ -25,7 +25,7 @@ fun Profile(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .padding(top = 12.dp, bottom = 12.dp, end = 28.dp),
+            .padding(bottom = 12.dp, end = 28.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Icon(
