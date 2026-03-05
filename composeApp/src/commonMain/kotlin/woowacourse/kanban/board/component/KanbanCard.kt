@@ -14,8 +14,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import woowacourse.kanban.board.component.card.CardContent
-import woowacourse.kanban.board.component.card.CardTitle
+import woowacourse.kanban.board.component.card.ContentText
+import woowacourse.kanban.board.component.card.TitleText
 import woowacourse.kanban.board.component.card.Profile
 import woowacourse.kanban.board.component.card.TagChipGroup
 
@@ -34,8 +34,8 @@ fun KanbanCard(
             .padding(17.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        CardTitle(title)
-        CardContent(content)
+        TitleText(title)
+        ContentText(content)
         TagChipGroup(tags)
         HorizontalDivider(color = Color(0xffE5E7EB))
         Profile(name)

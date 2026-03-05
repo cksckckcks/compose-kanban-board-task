@@ -8,7 +8,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun CardTitle(title: String? = null) {
+fun TitleText(title: String? = null) {
     Text(
         text = title ?: "LazyColumn 컴포넌트 구현",
         fontSize = 16.sp,
@@ -21,12 +21,12 @@ fun CardTitle(title: String? = null) {
 
 @Preview(showBackground = true)
 @Composable
-fun CardTitlePreview() {
-    CardTitle()
+fun TitleTextPreview() {
+    TitleText()
 }
 
 @Preview(showBackground = true)
 @Composable
-fun CardTitleMaxPreview() {
-    CardTitle(title = "너무너무 긴 제목은 한 줄까지만 노출너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...")
+fun TitleTextMaxPreview() {
+    TitleText(title = "너무너무 긴 제목은 한 줄까지만 노출너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...")
 }

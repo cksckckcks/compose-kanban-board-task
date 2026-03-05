@@ -8,7 +8,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun CardContent(content: String? = null) {
+fun ContentText(content: String? = null) {
     content?.let { content ->
         Text(
             text = content,
@@ -23,12 +23,12 @@ fun CardContent(content: String? = null) {
 
 @Composable
 @Preview(showBackground = true)
-fun CardContentPreview() {
-    CardContent(content = "LazyColumn 컴포넌트 구현")
+fun ContentTextPreview() {
+    ContentText(content = "LazyColumn 컴포넌트 구현")
 }
 
 @Composable
 @Preview(showBackground = true)
-fun CardContentMaxPreview() {
-    CardContent(content = "LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현")
+fun ContentTextMaxPreview() {
+    ContentText(content = "LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현")
 }
