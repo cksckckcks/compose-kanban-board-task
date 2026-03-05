@@ -1,40 +1,31 @@
-This is a Kotlin Multiplatform project targeting Android, Desktop (JVM).
+## 구현해야될 기능
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
-
-### Build and Run Android Application
-
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
-
-### Build and Run Desktop (JVM) Application
-
-To build and run the development version of the desktop app, use the run configuration from the run widget
-in your IDE’s toolbar or run it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:run
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:run
-  ```
-
----
-
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+1. 제목 컴포넌트 구현
+    - 라인 최대 1줄로 제한
+    - 오버플로우 UI
+    - Input이 빈 값일 때 → 기본 값 “LazyColumn 컴포넌트 구현” 설정
+2. 내용 컴포넌트 구현
+    - 라인 최대 2줄로 제한
+    - 오버플로우 UI
+    - Input이 빈 값일 때 → null
+3. 태그 컴포넌트 구현
+    - 글자 수 5글자로 제한
+    - 라운드
+    - 글, 배경 색 조정
+4. 태그 FlowRow 컴포넌트 구현
+    - 태그의 개수 5개로 제한
+5. 프로필 정보 컴포넌트 구현
+    - 프로필 Icon
+    - 프로필 이름
+        - 라인 최대 1줄로 제한
+        - 오버플로우 UI
+6. 카드 컴포넌트 구현
+    - 카드 크기 Max 286 * 233
+    - 내용과 프로필 정보 컴포넌트 구현 사이 라인 1개 추가
+    - Padding 값 필요
+7. 칸반보드 컴포넌트 구현
+    - 테두리
+    - 모서리 원형
+    - Input이 빈 값일 때 예외 처리
+    - Top 정렬
+    - 카드 크기에 따라 두 줄 정렬이 흐트러지지 않도록, 카드 높이에 대한 일정한 제한 (또는 최소/최대 높이 기준)
