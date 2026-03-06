@@ -10,9 +10,9 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun TitleText(
-        title: String,
-        modifier: Modifier = Modifier
-    ) {
+    title: String,
+    modifier: Modifier = Modifier
+) {
     Text(
         text = title ,
         fontSize = 16.sp,
