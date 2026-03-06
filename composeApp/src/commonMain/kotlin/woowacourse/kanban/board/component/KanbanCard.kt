@@ -24,11 +24,12 @@ import woowacourse.kanban.board.component.card.TitleText
 fun KanbanCard(
     title: String,
     name: String,
+    modifier: Modifier = Modifier,
     content: String? = null,
     tags: List<String> = emptyList(),
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .width(286.dp)
             .clip(RoundedCornerShape(10.dp))
             .border(1.dp, Color(0xffE5E7EB), shape = RoundedCornerShape(10.dp))
