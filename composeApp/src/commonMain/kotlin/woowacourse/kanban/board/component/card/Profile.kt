@@ -14,6 +14,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -46,14 +48,17 @@ fun Profile(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun ProfilePreview() {
-    Profile(name = "김철수")
+private class ProfilePreviewParameterProvider : PreviewParameterProvider<String> {
+    override val values = sequenceOf(
+        "김철수",
+        "김철수김철수김철수김철수김철수김철수김철수김철수김철수김철수"
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun ProfileNameMaxPreview() {
-    Profile(name = "김철수김철수김철수김철수김철수김철수김철수김철수김철수김철수김철수김철수")
+private fun ProfilePreview(
+    @PreviewParameter(ProfilePreviewParameterProvider::class) name: String
+) {
+    Profile(name = name)
 }

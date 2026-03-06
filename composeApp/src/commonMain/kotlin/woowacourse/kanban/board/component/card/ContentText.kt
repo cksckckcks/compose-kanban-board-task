@@ -6,6 +6,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.sp
 
 @Composable
@@ -24,14 +26,18 @@ fun ContentText(
     )
 }
 
-@Composable
-@Preview(showBackground = true)
-fun ContentTextPreview() {
-    ContentText(content = "LazyColumn 컴포넌트 구현")
+private class ContentPreviewParameterProvider : PreviewParameterProvider<String> {
+    override val values = sequenceOf(
+        "LazyColumn 컴포넌트 구현",
+        "LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현"
+    )
+
 }
 
 @Composable
 @Preview(showBackground = true)
-fun ContentTextMaxPreview() {
-    ContentText(content = "LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현")
+private fun ContentTextPreview(
+    @PreviewParameter(ContentPreviewParameterProvider::class) content: String
+) {
+    ContentText(content = content)
 }

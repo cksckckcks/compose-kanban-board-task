@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -31,13 +33,21 @@ fun TagChipGroup(
     }
 }
 
+private class TagChipGroupPreviewParameterProvider : PreviewParameterProvider<List<String>> {
+    override val values = sequenceOf(
+        listOf("태그", "태그", "안녕"),
+        listOf("안녕하세요요요", "안녕하세요우오", "반갑습니다아아", "호기심입니다", "5번이에요", "6번이건보이면안돼")
+    )
+}
+
 @Preview(showBackground = true)
 @Composable
-fun TagChipGroupPreview() {
-    val tags = listOf("dd", "dd", "dd", "ddd", "Fff", "dd")
+private fun TagChipGroupPreview(
+    @PreviewParameter(TagChipGroupPreviewParameterProvider::class) tags: List<String>
+) {
     Box(
         modifier = Modifier
-            .width(100.dp),
+            .width(200.dp),
     ) {
         TagChipGroup(tags = tags)
     }

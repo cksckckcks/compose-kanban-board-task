@@ -11,6 +11,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -36,14 +38,17 @@ fun TagChip(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun TagChipPreview() {
-    TagChip(tag = "안녕")
+private class TagChipPreviewParameterProvider : PreviewParameterProvider<String> {
+    override val values = sequenceOf(
+        "안녕",
+        "긴태그긴태그"
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun TagChipMaxPreview() {
-    TagChip(tag = "안녕하세요긴거입니다")
+private fun TagChipPreview(
+    @PreviewParameter(TagChipPreviewParameterProvider::class) tag: String
+) {
+    TagChip(tag = tag)
 }
