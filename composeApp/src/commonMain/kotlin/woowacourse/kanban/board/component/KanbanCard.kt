@@ -22,7 +22,7 @@ import woowacourse.kanban.board.component.card.TagChipGroup
 @Composable
 fun KanbanCard(
     name: String,
-    title: String? = null,
+    title: String,
     content: String? = null,
     tags: List<String> = emptyList()
 ) {
@@ -35,7 +35,9 @@ fun KanbanCard(
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         TitleText(title)
-        ContentText(content)
+        if (content != null) {
+            ContentText(content)
+        }
         TagChipGroup(tags)
         HorizontalDivider(color = Color(0xffE5E7EB))
         Profile(name)
