@@ -8,9 +8,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun TitleText(title: String? = null) {
+fun TitleText(title: String) {
     Text(
-        text = title ?: "LazyColumn 컴포넌트 구현",
+        text = title ,
         fontSize = 16.sp,
         fontWeight = FontWeight.Medium,
         lineHeight = 24.sp,
@@ -22,7 +22,7 @@ fun TitleText(title: String? = null) {
 @Preview(showBackground = true)
 @Composable
 fun TitleTextPreview() {
-    TitleText()
+    TitleText("LazyColumn 컴포넌트 구현")
 }
 
 @Preview(showBackground = true)
