@@ -22,9 +22,11 @@ fun TagChipGroup(
         verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         tags.forEachIndexed { index, tag ->
-            if (index < maxTagCount) {
-                TagChip(tag = tag)
+            if (index >= maxTagCount) {
+                return@forEachIndexed
             }
+
+            TagChip(tag = tag)
         }
     }
 }
