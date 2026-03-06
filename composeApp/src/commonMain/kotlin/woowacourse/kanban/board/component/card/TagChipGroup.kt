@@ -13,7 +13,8 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun TagChipGroup(
     tags: List<String>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    maxTagCount: Int = 5
 ) {
     FlowRow(
         modifier.fillMaxWidth(),
@@ -21,7 +22,7 @@ fun TagChipGroup(
         verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         tags.forEachIndexed { index, tag ->
-            if (index < 5) {
+            if (index < maxTagCount) {
                 TagChip(tag = tag)
             }
         }
