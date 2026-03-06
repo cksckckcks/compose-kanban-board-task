@@ -16,16 +16,16 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import woowacourse.kanban.board.component.card.ContentText
-import woowacourse.kanban.board.component.card.TitleText
 import woowacourse.kanban.board.component.card.Profile
 import woowacourse.kanban.board.component.card.TagChipGroup
+import woowacourse.kanban.board.component.card.TitleText
 
 @Composable
 fun KanbanCard(
     title: String,
     name: String,
     content: String? = null,
-    tags: List<String> = emptyList()
+    tags: List<String> = emptyList(),
 ) {
     Column(
         modifier = Modifier
@@ -49,7 +49,7 @@ private data class KanbanCardParameters(
     val name: String,
     val title: String,
     val content: String? = null,
-    val tags: List<String> = emptyList()
+    val tags: List<String> = emptyList(),
 )
 
 private class KanbanCardPreviewParameterProvider : PreviewParameterProvider<KanbanCardParameters> {
@@ -58,41 +58,38 @@ private class KanbanCardPreviewParameterProvider : PreviewParameterProvider<Kanb
             title = "LazyColumn 컴포넌트 구현",
             content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
             tags = listOf("컴포넌트", "성능"),
-            name = "다이노"
+            name = "다이노",
         ),
         KanbanCardParameters(
             title = "LazyColumn 컴포넌트 구현",
             tags = listOf("컴포넌트", "성능"),
-            name = "다이노"
+            name = "다이노",
         ),
         KanbanCardParameters(
             title = "LazyColumn 컴포넌트 구현",
             content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
-            name = "다이노"
+            name = "다이노",
         ),
         KanbanCardParameters(
             title = "LazyColumn 컴포넌트 구현",
-            name = "다이노"
+            name = "다이노",
         ),
         KanbanCardParameters(
             title = "너무너무 긴 제목은 한 줄까지만 노출 노출 노출 노출 노출",
-            content = "너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다 두 줄까지만 노너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다 두 줄까지만 노...너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다 두 줄까지만 노...",
+            content = "너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다 두 줄까지만 노너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다",
             name = "너무너무너무 긴 담당자도 한 줄너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄...",
-            tags = listOf("너무너무", "긴 태그", "최대로", "5자까지", "5개제한임", "나는6번")
-        )
+            tags = listOf("너무너무", "긴 태그", "최대로", "5자까지", "5개제한임", "나는6번"),
+        ),
     )
 }
 
-
 @Preview(showBackground = true)
 @Composable
-private fun KanbanCardPreview(
-    @PreviewParameter(KanbanCardPreviewParameterProvider::class) parameters: KanbanCardParameters
-) {
+private fun KanbanCardPreview(@PreviewParameter(KanbanCardPreviewParameterProvider::class) parameters: KanbanCardParameters) {
     KanbanCard(
         title = parameters.title,
         content = parameters.content,
         tags = parameters.tags,
-        name = parameters.name
+        name = parameters.name,
     )
 }

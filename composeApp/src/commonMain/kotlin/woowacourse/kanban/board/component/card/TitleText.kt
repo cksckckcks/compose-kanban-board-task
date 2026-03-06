@@ -11,32 +11,27 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun TitleText(
-    title: String,
-    modifier: Modifier = Modifier
-) {
+fun TitleText(title: String, modifier: Modifier = Modifier) {
     Text(
-        text = title ,
+        text = title,
         fontSize = 16.sp,
         fontWeight = FontWeight.Medium,
         lineHeight = 24.sp,
         maxLines = 1,
         overflow = TextOverflow.Ellipsis,
-        modifier = modifier
+        modifier = modifier,
     )
 }
 
 private class TitleTextPreviewParameterProvider : PreviewParameterProvider<String> {
     override val values = sequenceOf(
         "LazyColumn 컴포넌트 구현",
-        "너무너무 긴 제목은 한 줄까지만 노출너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출..."
+        "너무너무 긴 제목은 한 줄까지만 노출너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...너무너무 긴 제목은 한 줄까지만 노출...",
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun TitleTextPreview(
-    @PreviewParameter(TitleTextPreviewParameterProvider::class) title: String
-) {
+private fun TitleTextPreview(@PreviewParameter(TitleTextPreviewParameterProvider::class) title: String) {
     TitleText(title)
 }

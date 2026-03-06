@@ -16,12 +16,12 @@ import androidx.compose.ui.unit.dp
 fun TagChipGroup(
     tags: List<String>,
     modifier: Modifier = Modifier,
-    maxTagCount: Int = 5
+    maxTagCount: Int = 5,
 ) {
     FlowRow(
         modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp)
+        verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         tags.forEachIndexed { index, tag ->
             if (index >= maxTagCount) {
@@ -36,15 +36,13 @@ fun TagChipGroup(
 private class TagChipGroupPreviewParameterProvider : PreviewParameterProvider<List<String>> {
     override val values = sequenceOf(
         listOf("태그", "태그", "안녕"),
-        listOf("안녕하세요요요", "안녕하세요우오", "반갑습니다아아", "호기심입니다", "5번이에요", "6번이건보이면안돼")
+        listOf("안녕하세요요요", "안녕하세요우오", "반갑습니다아아", "호기심입니다", "5번이에요", "6번이건보이면안돼"),
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun TagChipGroupPreview(
-    @PreviewParameter(TagChipGroupPreviewParameterProvider::class) tags: List<String>
-) {
+private fun TagChipGroupPreview(@PreviewParameter(TagChipGroupPreviewParameterProvider::class) tags: List<String>) {
     Box(
         modifier = Modifier
             .width(200.dp),

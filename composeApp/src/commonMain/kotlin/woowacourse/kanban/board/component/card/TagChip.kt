@@ -20,12 +20,12 @@ import androidx.compose.ui.unit.sp
 fun TagChip(
     tag: String,
     modifier: Modifier = Modifier,
-    maxLength: Int = 5
+    maxLength: Int = 5,
 ) {
     Box(
         modifier = modifier
             .clip(CircleShape)
-            .background(Color(0xFFF3F4F6))
+            .background(Color(0xFFF3F4F6)),
     ) {
         Text(
             text = tag.take(maxLength),
@@ -33,7 +33,7 @@ fun TagChip(
             fontWeight = FontWeight.Normal,
             lineHeight = 16.sp,
             modifier = Modifier
-                .padding(horizontal = 8.dp, vertical = 4.dp)
+                .padding(horizontal = 8.dp, vertical = 4.dp),
         )
     }
 }
@@ -41,14 +41,12 @@ fun TagChip(
 private class TagChipPreviewParameterProvider : PreviewParameterProvider<String> {
     override val values = sequenceOf(
         "안녕",
-        "긴태그긴태그"
+        "긴태그긴태그",
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun TagChipPreview(
-    @PreviewParameter(TagChipPreviewParameterProvider::class) tag: String
-) {
+private fun TagChipPreview(@PreviewParameter(TagChipPreviewParameterProvider::class) tag: String) {
     TagChip(tag = tag)
 }

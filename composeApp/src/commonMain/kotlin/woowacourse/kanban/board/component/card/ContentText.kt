@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun ContentText(
     content: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Text(
         text = content,
@@ -22,22 +22,19 @@ fun ContentText(
         lineHeight = 24.sp,
         maxLines = 2,
         overflow = TextOverflow.Ellipsis,
-        modifier = modifier
+        modifier = modifier,
     )
 }
 
 private class ContentPreviewParameterProvider : PreviewParameterProvider<String> {
     override val values = sequenceOf(
         "LazyColumn 컴포넌트 구현",
-        "LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현"
+        "LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현LazyColumn 컴포넌트 구현",
     )
-
 }
 
 @Composable
 @Preview(showBackground = true)
-private fun ContentTextPreview(
-    @PreviewParameter(ContentPreviewParameterProvider::class) content: String
-) {
+private fun ContentTextPreview(@PreviewParameter(ContentPreviewParameterProvider::class) content: String) {
     ContentText(content = content)
 }

@@ -22,18 +22,18 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun Profile(
     name: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Row(
         modifier = modifier
             .fillMaxWidth()
             .padding(bottom = 12.dp, end = 28.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Icon(
             imageVector = Icons.Default.AccountCircle,
             contentDescription = "프로필 이미지",
-            tint = Color(0xFF838383)
+            tint = Color(0xFF838383),
         )
 
         Text(
@@ -43,7 +43,7 @@ fun Profile(
             lineHeight = 20.sp,
             color = Color(0xFF364153),
             overflow = TextOverflow.Ellipsis,
-            maxLines = 1
+            maxLines = 1,
         )
     }
 }
@@ -51,14 +51,12 @@ fun Profile(
 private class ProfilePreviewParameterProvider : PreviewParameterProvider<String> {
     override val values = sequenceOf(
         "김철수",
-        "김철수김철수김철수김철수김철수김철수김철수김철수김철수김철수"
+        "김철수김철수김철수김철수김철수김철수김철수김철수김철수김철수",
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun ProfilePreview(
-    @PreviewParameter(ProfilePreviewParameterProvider::class) name: String
-) {
+private fun ProfilePreview(@PreviewParameter(ProfilePreviewParameterProvider::class) name: String) {
     Profile(name = name)
 }
