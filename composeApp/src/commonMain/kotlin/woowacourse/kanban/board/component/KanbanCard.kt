@@ -1,5 +1,6 @@
 package woowacourse.kanban.board.component
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,6 +33,7 @@ fun KanbanCard(
         modifier = modifier
             .width(286.dp)
             .clip(RoundedCornerShape(10.dp))
+            .background(Color.White)
             .border(1.dp, Color(0xffE5E7EB), shape = RoundedCornerShape(10.dp))
             .padding(17.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
