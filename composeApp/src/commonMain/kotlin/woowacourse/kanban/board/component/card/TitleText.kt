@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun TitleText(
     title: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Text(
         text = title,
