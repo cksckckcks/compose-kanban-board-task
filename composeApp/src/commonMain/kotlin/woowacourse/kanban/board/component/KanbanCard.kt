@@ -20,6 +20,7 @@ import woowacourse.kanban.board.component.card.ContentText
 import woowacourse.kanban.board.component.card.Profile
 import woowacourse.kanban.board.component.card.TagChipGroup
 import woowacourse.kanban.board.component.card.TitleText
+import woowacourse.kanban.board.model.Content
 import woowacourse.kanban.board.model.Crew
 import woowacourse.kanban.board.model.Tag
 import woowacourse.kanban.board.model.Title
@@ -29,7 +30,7 @@ fun KanbanCard(
     title: Title,
     crew: Crew,
     modifier: Modifier = Modifier,
-    content: String? = null,
+    content: Content? = null,
     tags: List<Tag> = emptyList(),
 ) {
     Column(
@@ -43,7 +44,7 @@ fun KanbanCard(
     ) {
         TitleText(title.text)
         if (content != null) {
-            ContentText(content)
+            ContentText(content.text)
         }
         TagChipGroup(tags.map { it.name })
         HorizontalDivider(color = Color(0xffE5E7EB))
@@ -54,7 +55,7 @@ fun KanbanCard(
 private data class KanbanCardParameters(
     val crew: Crew,
     val title: Title,
-    val content: String? = null,
+    val content: Content? = null,
     val tags: List<Tag> = emptyList(),
 )
 
@@ -62,7 +63,7 @@ private class KanbanCardPreviewParameterProvider : PreviewParameterProvider<Kanb
     override val values = sequenceOf(
         KanbanCardParameters(
             title = Title("LazyColumn 컴포넌트 구현"),
-            content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
+            content = Content("세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다."),
             tags = listOf(Tag("컴포넌트"), Tag("성능")),
             crew = Crew("다이노"),
         ),
@@ -73,7 +74,7 @@ private class KanbanCardPreviewParameterProvider : PreviewParameterProvider<Kanb
         ),
         KanbanCardParameters(
             title = Title("LazyColumn 컴포넌트 구현"),
-            content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
+            content = Content("세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다."),
             crew = Crew("다이노"),
         ),
         KanbanCardParameters(
@@ -82,7 +83,7 @@ private class KanbanCardPreviewParameterProvider : PreviewParameterProvider<Kanb
         ),
         KanbanCardParameters(
             title = Title("너무너무 긴 제목은 한 줄까지만 노출 노출 노출 노출 노출"),
-            content = "너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다 두 줄까지만 노너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다",
+            content = Content("너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다 두 줄까지만 노너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임"),
             crew = Crew("너무너무너무 긴 담당자도 한 줄너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄..."),
             tags = listOf(
                 Tag("너무너무"),
