@@ -20,12 +20,13 @@ import woowacourse.kanban.board.component.card.ContentText
 import woowacourse.kanban.board.component.card.Profile
 import woowacourse.kanban.board.component.card.TagChipGroup
 import woowacourse.kanban.board.component.card.TitleText
+import woowacourse.kanban.board.model.Crew
 import woowacourse.kanban.board.model.Tag
 
 @Composable
 fun KanbanCard(
     title: String,
-    name: String,
+    crew: Crew,
     modifier: Modifier = Modifier,
     content: String? = null,
     tags: List<Tag> = emptyList(),
@@ -45,12 +46,12 @@ fun KanbanCard(
         }
         TagChipGroup(tags)
         HorizontalDivider(color = Color(0xffE5E7EB))
-        Profile(name)
+        Profile(crew.name)
     }
 }
 
 private data class KanbanCardParameters(
-    val name: String,
+    val crew: Crew,
     val title: String,
     val content: String? = null,
     val tags: List<Tag> = emptyList(),
@@ -62,26 +63,26 @@ private class KanbanCardPreviewParameterProvider : PreviewParameterProvider<Kanb
             title = "LazyColumn 컴포넌트 구현",
             content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
             tags = listOf(Tag("컴포넌트"), Tag("성능")),
-            name = "다이노",
+            crew = Crew("다이노"),
         ),
         KanbanCardParameters(
             title = "LazyColumn 컴포넌트 구현",
             tags = listOf(Tag("컴포넌트"), Tag("성능")),
-            name = "다이노",
+            crew = Crew("다이노"),
         ),
         KanbanCardParameters(
             title = "LazyColumn 컴포넌트 구현",
             content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
-            name = "다이노",
+            crew = Crew("다이노"),
         ),
         KanbanCardParameters(
             title = "LazyColumn 컴포넌트 구현",
-            name = "다이노",
+            crew = Crew("다이노"),
         ),
         KanbanCardParameters(
             title = "너무너무 긴 제목은 한 줄까지만 노출 노출 노출 노출 노출",
             content = "너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다 두 줄까지만 노너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다",
-            name = "너무너무너무 긴 담당자도 한 줄너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄...",
+            crew = Crew("너무너무너무 긴 담당자도 한 줄너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄..."),
             tags = listOf(
                 Tag("너무너무"),
                 Tag("긴 태그"),
@@ -101,6 +102,6 @@ private fun KanbanCardPreview(@PreviewParameter(KanbanCardPreviewParameterProvid
         title = parameters.title,
         content = parameters.content,
         tags = parameters.tags,
-        name = parameters.name,
+        crew = parameters.crew,
     )
 }
