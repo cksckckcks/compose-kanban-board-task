@@ -19,7 +19,7 @@ import woowacourse.kanban.board.model.Tag
 
 @Composable
 fun TagChip(
-    tag: Tag,
+    tag: String,
     modifier: Modifier = Modifier,
     maxLength: Int = 5,
 ) {
@@ -29,7 +29,7 @@ fun TagChip(
             .background(Color(0xFFF3F4F6)),
     ) {
         Text(
-            text = tag.name.take(maxLength),
+            text = tag.take(maxLength),
             fontSize = 12.sp,
             fontWeight = FontWeight.Normal,
             lineHeight = 16.sp,
@@ -49,5 +49,5 @@ private class TagChipPreviewParameterProvider : PreviewParameterProvider<String>
 @Preview(showBackground = true)
 @Composable
 private fun TagChipPreview(@PreviewParameter(TagChipPreviewParameterProvider::class) tag: String) {
-    TagChip(tag = Tag(tag))
+    TagChip(tag = tag)
 }

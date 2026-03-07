@@ -44,7 +44,7 @@ fun KanbanCard(
         if (content != null) {
             ContentText(content)
         }
-        TagChipGroup(tags)
+        TagChipGroup(tags.map { it.name })
         HorizontalDivider(color = Color(0xffE5E7EB))
         Profile(crew.name)
     }
