@@ -22,10 +22,11 @@ import woowacourse.kanban.board.component.card.TagChipGroup
 import woowacourse.kanban.board.component.card.TitleText
 import woowacourse.kanban.board.model.Crew
 import woowacourse.kanban.board.model.Tag
+import woowacourse.kanban.board.model.Title
 
 @Composable
 fun KanbanCard(
-    title: String,
+    title: Title,
     crew: Crew,
     modifier: Modifier = Modifier,
     content: String? = null,
@@ -40,7 +41,7 @@ fun KanbanCard(
             .padding(17.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        TitleText(title)
+        TitleText(title.text)
         if (content != null) {
             ContentText(content)
         }
@@ -52,7 +53,7 @@ fun KanbanCard(
 
 private data class KanbanCardParameters(
     val crew: Crew,
-    val title: String,
+    val title: Title,
     val content: String? = null,
     val tags: List<Tag> = emptyList(),
 )
@@ -60,27 +61,27 @@ private data class KanbanCardParameters(
 private class KanbanCardPreviewParameterProvider : PreviewParameterProvider<KanbanCardParameters> {
     override val values = sequenceOf(
         KanbanCardParameters(
-            title = "LazyColumn 컴포넌트 구현",
+            title = Title("LazyColumn 컴포넌트 구현"),
             content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
             tags = listOf(Tag("컴포넌트"), Tag("성능")),
             crew = Crew("다이노"),
         ),
         KanbanCardParameters(
-            title = "LazyColumn 컴포넌트 구현",
+            title = Title("LazyColumn 컴포넌트 구현"),
             tags = listOf(Tag("컴포넌트"), Tag("성능")),
             crew = Crew("다이노"),
         ),
         KanbanCardParameters(
-            title = "LazyColumn 컴포넌트 구현",
+            title = Title("LazyColumn 컴포넌트 구현"),
             content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
             crew = Crew("다이노"),
         ),
         KanbanCardParameters(
-            title = "LazyColumn 컴포넌트 구현",
+            title = Title("LazyColumn 컴포넌트 구현"),
             crew = Crew("다이노"),
         ),
         KanbanCardParameters(
-            title = "너무너무 긴 제목은 한 줄까지만 노출 노출 노출 노출 노출",
+            title = Title("너무너무 긴 제목은 한 줄까지만 노출 노출 노출 노출 노출"),
             content = "너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다 두 줄까지만 노너무너무너무 긴 설명은 두 줄까지만 노출하고 말줄임표로 처리합니다",
             crew = Crew("너무너무너무 긴 담당자도 한 줄너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄...너무너무너무 긴 담당자도 한 줄..."),
             tags = listOf(
