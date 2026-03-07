@@ -15,10 +15,11 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import woowacourse.kanban.board.model.Tag
 
 @Composable
 fun TagChip(
-    tag: String,
+    tag: Tag,
     modifier: Modifier = Modifier,
     maxLength: Int = 5,
 ) {
@@ -28,7 +29,7 @@ fun TagChip(
             .background(Color(0xFFF3F4F6)),
     ) {
         Text(
-            text = tag.take(maxLength),
+            text = tag.name.take(maxLength),
             fontSize = 12.sp,
             fontWeight = FontWeight.Normal,
             lineHeight = 16.sp,
@@ -48,5 +49,5 @@ private class TagChipPreviewParameterProvider : PreviewParameterProvider<String>
 @Preview(showBackground = true)
 @Composable
 private fun TagChipPreview(@PreviewParameter(TagChipPreviewParameterProvider::class) tag: String) {
-    TagChip(tag = tag)
+    TagChip(tag = Tag(tag))
 }

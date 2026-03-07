@@ -11,10 +11,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+import woowacourse.kanban.board.model.Tag
 
 @Composable
 fun TagChipGroup(
-    tags: List<String>,
+    tags: List<Tag>,
     modifier: Modifier = Modifier,
     maxTagCount: Int = 5,
 ) {
@@ -30,16 +31,23 @@ fun TagChipGroup(
     }
 }
 
-private class TagChipGroupPreviewParameterProvider : PreviewParameterProvider<List<String>> {
+private class TagChipGroupPreviewParameterProvider : PreviewParameterProvider<List<Tag>> {
     override val values = sequenceOf(
-        listOf("태그", "태그", "안녕"),
-        listOf("안녕하세요요요", "안녕하세요우오", "반갑습니다아아", "호기심입니다", "5번이에요", "6번이건보이면안돼"),
+        listOf(Tag("태그"), Tag("태그"), Tag("안녕")),
+        listOf(
+            Tag("안녕하세요요요"),
+            Tag("안녕하세요우오"),
+            Tag("반갑습니다아아"),
+            Tag("호기심입니다"),
+            Tag("5번이에요"),
+            Tag("6번이건보이면안돼"),
+        ),
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-private fun TagChipGroupPreview(@PreviewParameter(TagChipGroupPreviewParameterProvider::class) tags: List<String>) {
+private fun TagChipGroupPreview(@PreviewParameter(TagChipGroupPreviewParameterProvider::class) tags: List<Tag>) {
     Box(
         modifier = Modifier
             .width(200.dp),
