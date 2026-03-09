@@ -1,6 +1,5 @@
 package woowacourse.kanban.board.model
 
-import woowacourse.kanban.board.constants.TAG_ERROR_MESSAGE
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -23,7 +22,7 @@ class TagTest {
             Tag(tagName)
         }
 
-        assertEquals(TAG_ERROR_MESSAGE, exception.message)
+        assertEquals("태그는 비어있거나 공백일 수 없습니다.", exception.message)
     }
 
     @Test
@@ -34,6 +33,6 @@ class TagTest {
             Tag(tagName)
         }
 
-        assertEquals(TAG_ERROR_MESSAGE, exception.message)
+        assertEquals("태그는 비어있거나 공백일 수 없습니다.", exception.message)
     }
 }

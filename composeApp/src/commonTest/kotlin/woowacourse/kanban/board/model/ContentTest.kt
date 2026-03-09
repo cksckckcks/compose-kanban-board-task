@@ -1,6 +1,5 @@
 package woowacourse.kanban.board.model
 
-import woowacourse.kanban.board.constants.CONTENT_ERROR_MESSAGE
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -23,7 +22,7 @@ class ContentTest {
             Content(contentText)
         }
 
-        assertEquals(CONTENT_ERROR_MESSAGE, exception.message)
+        assertEquals("본문은 비어있거나 공백일 수 없습니다.", exception.message)
     }
 
     @Test
@@ -34,6 +33,6 @@ class ContentTest {
             Content(contentText)
         }
 
-        assertEquals(CONTENT_ERROR_MESSAGE, exception.message)
+        assertEquals("본문은 비어있거나 공백일 수 없습니다.", exception.message)
     }
 }
