@@ -15,7 +15,7 @@ class ContentTest {
     }
 
     @Test
-    fun `제목이 비어있다면 생성되지 않는다`() {
+    fun `본문이 비어있다면 생성되지 않는다`() {
         val contentText = ""
 
         assertFailsWith<IllegalArgumentException> {
@@ -24,7 +24,7 @@ class ContentTest {
     }
 
     @Test
-    fun `제목에 공백만 있다면 생성되지 않는다`() {
+    fun `본문에 공백만 있다면 생성되지 않는다`() {
         val contentText = "    "
 
         assertFailsWith<IllegalArgumentException> {
