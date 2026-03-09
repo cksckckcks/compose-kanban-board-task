@@ -43,7 +43,7 @@ class TitleTextTest {
             it(textLayoutResult)
         }
 
-        assertEquals(textLayoutResult.first().hasVisualOverflow, true)
+        assertEquals(textLayoutResult.first().isLineEllipsized(0), true)
     }
 
     @Test

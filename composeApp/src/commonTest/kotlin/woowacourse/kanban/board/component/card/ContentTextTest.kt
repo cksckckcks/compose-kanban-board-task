@@ -42,7 +42,7 @@ class ContentTextTest {
             it(textLayoutResult)
         }
 
-        assertEquals(textLayoutResult.first().hasVisualOverflow, true)
+        assertEquals(textLayoutResult.first().isLineEllipsized(1), true)
     }
 
     @Test
