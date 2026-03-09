@@ -3,7 +3,7 @@ package woowacourse.kanban.board.component.card
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.runComposeUiTest
-import org.junit.Test
+import kotlin.test.Test
 
 @OptIn(ExperimentalTestApi::class)
 class TagChipGroupTest {
