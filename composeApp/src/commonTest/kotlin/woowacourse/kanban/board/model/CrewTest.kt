@@ -6,7 +6,7 @@ import kotlin.test.assertFailsWith
 
 class CrewTest {
     @Test
-    fun `크루가 정상적으로 생성된다`() {
+    fun `크루 이름이 있다면 크루가 생성된다`() {
         val crewName = "볼트"
 
         val name = Crew(crewName)
