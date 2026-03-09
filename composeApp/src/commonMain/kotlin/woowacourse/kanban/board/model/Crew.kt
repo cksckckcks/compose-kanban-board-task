@@ -4,6 +4,6 @@ data class Crew(
     val name: String,
 ) {
     init {
-        require(name.isNotBlank()) { "올바른 이름을 입력해주세요." }
+        require(name.isNotBlank()) { "크루 이름은 공백이거나 비어있을 수 없습니다." }
     }
 }
