@@ -63,6 +63,6 @@ class TitleTextTest {
             it(textLayoutResult)
         }
 
-        assertEquals(textLayoutResult.first().hasVisualOverflow, true)
+        assertEquals(textLayoutResult.first().lineCount, 1)
     }
 }
