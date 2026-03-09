@@ -1,5 +1,6 @@
 package woowacourse.kanban.board.model
 
+import woowacourse.kanban.board.constants.CREW_ERROR_MESSAGE
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -18,17 +19,21 @@ class CrewTest {
     fun `이름이 비어있다면 생성되지 않는다`() {
         val crewName = ""
 
-        assertFailsWith<IllegalArgumentException> {
+        val exception = assertFailsWith<IllegalArgumentException> {
             Crew(crewName)
         }
+
+        assertEquals(CREW_ERROR_MESSAGE, exception.message)
     }
 
     @Test
     fun `이름에 공백만 있다면 생성되지 않는다`() {
         val crewName = "    "
 
-        assertFailsWith<IllegalArgumentException> {
+        val exception = assertFailsWith<IllegalArgumentException> {
             Crew(crewName)
         }
+
+        assertEquals(CREW_ERROR_MESSAGE, exception.message)
     }
 }

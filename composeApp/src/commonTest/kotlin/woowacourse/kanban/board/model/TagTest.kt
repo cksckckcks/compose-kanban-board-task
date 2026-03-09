@@ -1,5 +1,6 @@
 package woowacourse.kanban.board.model
 
+import woowacourse.kanban.board.constants.TAG_ERROR_MESSAGE
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -18,17 +19,21 @@ class TagTest {
     fun `Tag가 비어있다면 생성되지 않는다`() {
         val tagName = ""
 
-        assertFailsWith<IllegalArgumentException> {
+        val exception = assertFailsWith<IllegalArgumentException> {
             Tag(tagName)
         }
+
+        assertEquals(TAG_ERROR_MESSAGE, exception.message)
     }
 
     @Test
     fun `Tag에 공백만 있다면 생성되지 않는다`() {
         val tagName = "    "
 
-        assertFailsWith<IllegalArgumentException> {
+        val exception = assertFailsWith<IllegalArgumentException> {
             Tag(tagName)
         }
+
+        assertEquals(TAG_ERROR_MESSAGE, exception.message)
     }
 }
