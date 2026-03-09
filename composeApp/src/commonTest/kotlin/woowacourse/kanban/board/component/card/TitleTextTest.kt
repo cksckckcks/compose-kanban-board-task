@@ -1,6 +1,7 @@
 package woowacourse.kanban.board.component.card
 
 import androidx.compose.ui.test.ExperimentalTestApi
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.runComposeUiTest
 import kotlin.test.Test
@@ -15,6 +16,6 @@ class TitleTextTest {
             TitleText(title)
         }
 
-        onNodeWithText(title).assertExists()
+        onNodeWithText(title).assertIsDisplayed()
     }
 }

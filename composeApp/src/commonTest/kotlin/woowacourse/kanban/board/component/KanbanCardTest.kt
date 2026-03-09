@@ -1,6 +1,7 @@
 package woowacourse.kanban.board.component
 
 import androidx.compose.ui.test.ExperimentalTestApi
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.runComposeUiTest
 import woowacourse.kanban.board.model.Content
@@ -27,11 +28,11 @@ class KanbanCardTest {
             )
         }
 
-        onNodeWithText(title.text).assertExists()
-        onNodeWithText(content.text).assertExists()
-        onNodeWithText(crew.name).assertExists()
+        onNodeWithText(title.text).assertIsDisplayed()
+        onNodeWithText(content.text).assertIsDisplayed()
+        onNodeWithText(crew.name).assertIsDisplayed()
         tags.forEach { tag ->
-            onNodeWithText(tag.name).assertExists()
+            onNodeWithText(tag.name).assertIsDisplayed()
         }
     }
 
@@ -49,9 +50,9 @@ class KanbanCardTest {
             )
         }
 
-        onNodeWithText(title.text).assertExists()
-        onNodeWithText(content.text).assertExists()
-        onNodeWithText(crew.name).assertExists()
+        onNodeWithText(title.text).assertIsDisplayed()
+        onNodeWithText(content.text).assertIsDisplayed()
+        onNodeWithText(crew.name).assertIsDisplayed()
     }
 
     @Test
@@ -66,7 +67,7 @@ class KanbanCardTest {
             )
         }
 
-        onNodeWithText(title.text).assertExists()
-        onNodeWithText(crew.name).assertExists()
+        onNodeWithText(title.text).assertIsDisplayed()
+        onNodeWithText(crew.name).assertIsDisplayed()
     }
 }

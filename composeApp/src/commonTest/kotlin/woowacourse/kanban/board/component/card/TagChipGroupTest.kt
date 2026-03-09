@@ -1,6 +1,7 @@
 package woowacourse.kanban.board.component.card
 
 import androidx.compose.ui.test.ExperimentalTestApi
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.runComposeUiTest
 import kotlin.test.Test
@@ -16,7 +17,7 @@ class TagChipGroupTest {
         }
 
         tags.forEach { tag ->
-            onNodeWithText(tag).assertExists()
+            onNodeWithText(tag).assertIsDisplayed()
         }
     }
 
@@ -30,7 +31,7 @@ class TagChipGroupTest {
 
         tags.forEachIndexed { index, tag ->
             if (index < 5) {
-                onNodeWithText(tag).assertExists()
+                onNodeWithText(tag).assertIsDisplayed()
             } else {
                 onNodeWithText(tag).assertDoesNotExist()
             }
@@ -51,7 +52,7 @@ class TagChipGroupTest {
 
         tags.forEachIndexed { index, tag ->
             if (index < n) {
-                onNodeWithText(tag).assertExists()
+                onNodeWithText(tag).assertIsDisplayed()
             } else {
                 onNodeWithText(tag).assertDoesNotExist()
             }
