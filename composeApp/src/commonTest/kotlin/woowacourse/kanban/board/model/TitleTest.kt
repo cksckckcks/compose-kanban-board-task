@@ -7,7 +7,7 @@ import kotlin.test.assertFailsWith
 
 class TitleTest {
     @Test
-    fun `제목이 정상적으로 생성된다`() {
+    fun `제목이 공백이 아닌 문자열이라면 정상적으로 생성된다`() {
         val titleText = "안녕하세요. 제목입니다."
 
         val title = Title(titleText)

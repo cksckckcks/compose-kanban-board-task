@@ -7,7 +7,7 @@ import kotlin.test.assertFailsWith
 
 class TagTest {
     @Test
-    fun `Tag가 정상적으로 생성된다`() {
+    fun `태그가 공백이 아닌 문자열이라면 정상적으로 생성된다`() {
         val tagName = "볼트"
 
         val tag = Tag(tagName)

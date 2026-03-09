@@ -7,7 +7,7 @@ import kotlin.test.assertFailsWith
 
 class ContentTest {
     @Test
-    fun `본문이 정상적으로 생성된다`() {
+    fun `본문이 공백이 아닌 문자열이라면 정상적으로 생성된다`() {
         val contentText = "안녕하세요. 본문입니다. 반갑습니다. 잘부탁드립니다"
 
         val content = Content(contentText)
