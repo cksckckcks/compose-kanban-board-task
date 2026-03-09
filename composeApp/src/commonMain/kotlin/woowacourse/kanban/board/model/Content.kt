@@ -1,9 +1,11 @@
 package woowacourse.kanban.board.model
 
+import woowacourse.kanban.board.constants.CONTENT_ERROR_MESSAGE
+
 data class Content(
     val text: String,
 ) {
     init {
-        require(text.isNotBlank()) { "본문은 비어있거나, 공백으로 구성될 수 없습니다." }
+        require(text.isNotBlank()) { CONTENT_ERROR_MESSAGE }
     }
 }

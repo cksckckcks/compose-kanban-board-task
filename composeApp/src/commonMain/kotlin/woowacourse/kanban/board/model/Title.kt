@@ -1,9 +1,11 @@
 package woowacourse.kanban.board.model
 
+import woowacourse.kanban.board.constants.TITLE_ERROR_MESSAGE
+
 data class Title(
     val text: String,
 ) {
     init {
-        require(text.isNotBlank()) { "제목은 비어있거나 공백일 수 없습니다." }
+        require(text.isNotBlank()) { TITLE_ERROR_MESSAGE }
     }
 }
